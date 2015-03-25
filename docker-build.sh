@@ -1,13 +1,8 @@
-#!/bin/bash -x
+#!/bin/bash
 
-### build an initial image
 cd $(dirname $0)
-docker build -t iredmail:init .
+docker build --tag=iredmail .
 
-### run the config script (iRedMail.sh) on the initial image
-docker run -it --name=iredmail-config iredmail:init /$IREDMAIL/iRedMail.sh
-
-### save the configured container as an image
-docker rmi iredmail
-docker commit iredmail-config iredmail
-docker rm iredmail-config
+echo "
+Customize 'docker-create.sh' and create a container with it.
+"

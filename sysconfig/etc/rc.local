@@ -11,10 +11,4 @@
 #
 # By default this script does nothing.
 
-### update the hostname
-hostname=example.org
-hostname $hostname
-echo $hostname > /etc/hostname.new
-mv /etc/hostname.new /etc/hostname
-
 exit 0
