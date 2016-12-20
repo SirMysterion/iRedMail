@@ -2,6 +2,8 @@
 FROM ubuntu-upstart:14.04
 
 ### Update and customize ubuntu packages.
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.back
+ADD ./sources.list /etc/apt/
 RUN apt-get update ;\
     apt-get -y upgrade
 RUN apt-get -y purge openssh-server openssh-client ;\
